@@ -1,0 +1,9 @@
+## Step 1 Notes
+
+Console WriteLine and ReadLine
+Converting from string to double
+
+## Step 2
+
+`double.TryParse`
+`return` keyword
