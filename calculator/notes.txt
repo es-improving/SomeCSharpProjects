@@ -7,3 +7,8 @@ Converting from string to double
 
 `double.TryParse`
 `return` keyword
+
+## Step 3
+
+string split
+arrays
