@@ -12,3 +12,34 @@ Converting from string to double
 
 string split
 arrays
+
+## Step 4
+
+conditionals
+
+## Step 5
+
+continued conditional, though switch is appropriate
+
+## Step 6
+
+another conditional, looking for values in strings
+
+## Step 7
+
+while loop, exit early, continue
+
+## Step 8
+
+## Step 9a
+
+Pulling a variable to a higher scope
+
+## Step 9b
+
+Refactoring
+
+
+
+
+

@@ -1,39 +1,120 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link href="../style.css" rel="Stylesheet" type="text/css" />
     </head>
     <body>
-        <h1>Calculator</h1>
 
-        <h2>Step 1: Basic Addition</h2>
+        <div class="container">
 
-        <p>In this first step, ask for two inputs and add those.</p>
+            <h1>Calculator</h1>
 
-        <img src="step1.gif" />
+            <p>This is an exercise in gradually-mounting complexity. Start at the beginning and complete one task at a time. As things get more complex, you might want to stop and refactor. All previous requirements should be carried forward in all steps.</p>
 
-        <h2>Step 2: Checking Your Inputs</h2>
+            <p>Do this as a console application.</p>
 
-        <p>If the user enters in something that isn't a valid number, return an error message instead of computing the value.</p>
+            <h2>Step 1: Basic Addition</h2>
+    
+            <p>In this first step, ask for two inputs and add those. Support integers and decimal numbers.</p>
+    
+            <img src="step1.gif" />
+    
+            <h2>Step 2: Checking Your Inputs</h2>
+    
+            <p>If the user enters in something that isn't a valid number, return an error message instead of computing the value.</p>
+    
+            <img src="step2-check-inputs.gif" />
+    
+            <h2>Step 3: Take in Math Equation</h2>
+    
+            <p>Instead of asking for two separate numbers, change it to take in a string like "5 + 7". Once you've grabbed the numbers, be sure validate them to make sure they're valid.</p>
+    
+            <img src="step3-happy-path.gif" />
+    
+            <p>The error path should look the same.</p>
+    
+            <img src="step3-error-path.gif" />
+    
+            <!-- <div class="hint">
+                <p>It's probably easiest to user <code>yourStringVariable.Split(" ")</code> to turn the whole input string into an array, then use array indexing to get the values. Since you know you are doing addition, you don't need the "+" sign quite yet.</p>
+            </div> -->
+    
+            <h2>Step 4: Adding in Subtraction</h2>
+    
+            <p>Now support subtraction as well as addition.</p>
+        
+            <img src="step4-subtraction.gif" />
+    
+            <h2>Step 5: Add Support for Multiplication and Division</h2>
+            
+            <p>Now support multiplication...</p>
+    
+            <img src="step5-multiplication.gif" />
+    
+            <p>...and division.</p>
+    
+            <img src="step5-division.gif" />
+    
+            <h2>Step 6: Validate the Operator</h2>
+    
+            <p>You should also validate that the operator used is valid. If not, return an error message.</p>
+    
+            <img src="step6-validate-operator.gif" />
 
-        <img src="step2-check-inputs.gif" />
+            <h2>Step 7: Restarting the Calculator</h2>
 
-        <h2>Step 3: Take in Math Equation</h2>
+            <p>We don't want our calculator to close when we're done. We want to be able to keep solving our math problems! But if they type "exit", it should stop.</p>
 
-        <p>Instead of asking for two separate numbers, change it to take in a string like "5 + 7". Once you've grabbed the numbers, be sure validate them to make sure they're valid.</p>
+            <p>Also, all validations from previous steps should restart the calculator.</p>
 
-        <img src="step3-happy-path.gif" />
+            <img src="step7-continued-operations.gif" />
 
-        <p>The error path should look the same.</p>
+            <h2>Step 8: How Many Pieces in the Operation?</h2>
 
-        <img src="step3-error-path.gif" />
+            <p>So far, we know that we need three things as input into our calculator, a number, an operation, and then another number. This is something we could have done earlier (and you might have), but let's go ahead and do it now. If you don't get all the required values, give them an error message like the one below. After the message, they should be able to continue.</p>
 
-        <div class="hint">
-            <p>It's probably easiest to user <code>yourStringVariable.Split(" ")</code> to turn the whole input string into an array, then use array indexing to get the values. Since you know you are doing addition, you don't need the "+" sign quite yet.</p>
+            <img src="step8-validating-values-count.gif" />
+
+            <h2>Step 9: Continuing operations</h2>
+
+            <p>When you complete an operation in a normal calculator, you get the response. You can then build on that result with further operations. We want to be able to do that.</p>
+
+            <p>For example, if you do a basic addition like "5 + 7" in a calculator you'll have the result of "12". If you then hit the "+" symbol again and then "5", it will build off of the previous value and you will have the result of "17". But if they do another full operation (i.e., two numbers and an operator), they start with zero again.</p>
+
+            <p>Now that you have two formats that you support, you should update your validation to tell users that they can use either format.</p>
+
+            <img src="step9-continuing-operations.gif" />
+
+            <h2>Step 10: Valid Operation History</h2>
+
+            <p>The user should be able to see a history of valid operations by typing "history" in the console, which will list all valid operations and their results. If there is no history, it should say so.</p>
+
+            <img src="step10-valid-operation-history.gif" />
+
+            <h2>Step 11: Formatting History</h2>
+
+            <p>Showning the history like that is nice, but if the equations are of very different lengths, they're hard to read. For example...</p>
+
+            <img src="step11a-bad-history-formatting.gif" />
+
+            <p>Format them such that the results all line up. Like this:</p>
+
+            <img src="step11b-good-history-formatting.gif" />
+
+            <h2>Step 12: Filtering History</h2>
+
+            <p>Add the ability to pass an operator to the history command so you can pull back only operations with that operator.</p>
+
+            <img src="step12-filtering-history.gif" />
+
+            <h2>Step 13: The Implicit Starting Points and Filtering Problem</h2>
+
+            <p>The filtering can be handy, but it can cause a problem. For example, if someone did "5 + 20", then "- 10", "history -" you can't see the starting number! Oh snap.</p>
+
+            <p>To solve this, when filtering, show the starting number with underscores around it so the value can be seen but the user knows it came from the previous operation. If we take our previous example, filtering to just subtractions would result in "_25_ - 10" printed to the history. But <em>only</em> do this when filtering.</p>
+
+            <img src="step13-handling-previous-values.gif" />
         </div>
 
-        <h2>Step 4: Adding in Subtraction</h2>
-    
-        
     </body>
 </html>
