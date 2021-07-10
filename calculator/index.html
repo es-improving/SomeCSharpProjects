@@ -109,9 +109,9 @@
 
             <h2>Step 13: The Implicit Starting Points and Filtering Problem</h2>
 
-            <p>The filtering can be handy, but it can cause a problem. For example, if someone did "5 + 20", then "- 10", "history -" you can't see the starting number! Oh snap.</p>
+            <p>The filtering can be handy, but it can cause a problem. If one equation builds off of another, you might leave out a step that another equation technically depended on.</p>
 
-            <p>To solve this, when filtering, show the starting number with underscores around it so the value can be seen but the user knows it came from the previous operation. If we take our previous example, filtering to just subtractions would result in "_25_ - 10" printed to the history. But <em>only</em> do this when filtering.</p>
+            <p>Just to show the user exactly what was happening, show the starting number with underscores around it so the value can be seen but the user knows it came from the previous operation. If we take our previous example, filtering to just subtractions would result in "_25_ - 10" printed to the history. But <em>only</em> do this when filtering.</p>
 
             <img src="step13-handling-previous-values.gif" />
         </div>
