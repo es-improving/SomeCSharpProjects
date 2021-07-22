@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../style.css" rel="Stylesheet" type="text/css" />
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>Blackjack</h1>
+
+            <p>In this exercise, we're going to implement a console app to play single-player (one player, one dealer) Blackjack.</p>
+
+            <p><a href="https://bicyclecards.com/how-to-play/blackjack/">Here are the rules of the game.</a> The only thing it doesn't make sense to do in this console version of the game is to cut.</p>
+
+            <h2>The Final Solution</h2>
+
+            <p>Here is what it would look like at the very end of exercise. If you want to try to break this down yourself, feel free. If you want, I'll walk you through how I did it below.</p>
+
+            <img src="step12-add-some-color.gif" />
+
+            <h2>Step 1: Create Cards</h2>
+    
+            <p>First thing is to model a deck of cards in code. You'll probably want to create a <code>Card</code> and use a <code>List</code> or a <code>Stack</code> to represent the grouping of the cards. Create all the cards and print them to the console.</p>
+    
+            <img src="step01-cards.gif" />
+
+            <h2>Step 2: Shuffle the Deck</h2>
+
+            <p>For a proper game you must, of course, shuffle that deck.</p>
+    
+            <img src="step02-shuffled.gif" />
+
+            <h2>Step 3: Hands</h2>
+            
+            <p>Now that we've proven by console logging that we're actually shuffling our deck, we can dispense with the previous console logs and move on to the idea of having hands. The player has a hand and the dealer has a hand, and each starts with two cards in the initial deal.</p>
+
+            <img src="step03-hands.gif" />
+
+            <p>The second card for the dealer is supposed to be face down so the player can't see it. For now this will make debugging the game harder if we can't see all the values, so we'll defer that feature till later.</p>
+
+            <h2>Step 4: Player Hit</h2>
+
+            <p>The player has to decide if they want another card or not. Ask them if they want to hit or hold/stand, and if they hit give them another card and redisplay that hands. If they respond with something that doesn't make sense, ask again. If they choose to hit, you ask again. You ask until they say they want to hold.</p>
+
+            <p>I added in a little formatting to make it easier for me to read, but feel free to do otherwise.</p>
+
+            <img src="step04-hit-me.gif" />
+
+            <h2>Step 5: Player Bust</h2>
+
+            <p>If any hand reaches over 21 points, they automatically bust. If they payer hits and they bust, game over.</p>
+
+            <p>Note: The calculation is a great bit of code to write unit tests for.</p>
+
+            <img src="step05-player-bust.gif" />
+
+            <h2>Step 6: Dealer Play</h2>
+
+            <p>The dealer most hit if they have less than 17 in their hand, hold if they have higher.</p>
+
+            <img src="step06-dealer-play.gif" />
+
+            <h2>Step7: Determine Winner</h2>
+
+            <p>Now you can determine the winner. If the player has a higher score than the dealer without busting, they win. If the dealer has a higher score than the player without busting, it wins. If there is a tie, no one wins.</p>
+
+            <img src="step07-determine-winner.gif" />
+
+            <p>Or, if the dealer wins.</p>
+
+            <img src="step07-determine-winner-dealer.gif" />
+
+            <h2>Step 8: Blackjack</h2>
+
+            <p>Now let's handle getting a blackjack (natural 21). If the player gets a blackjack and the dealer does not, they win automatically. If the dealer gets one and the player does not, it wins automatically. If both get a blackjack, it's a tie.</p>
+
+            <img src="step08-blackjacks.gif" />
+
+            <h2>Step 9: Hide the Dealer's Second Card</h2>
+
+            <p>According to the rules, the second card for the dealer is dealt face down so the player can't see it. The card is revealed when the player's turn is over.</p>
+
+            <img src="step09-hide-dealer-card.gif" />
+
+            <h2>Step 10: Start the Game Over</h2>
+
+            <p>When the hand is over, do it again! But ask them if they want to continue or not.</p>
+
+            <img src="step10-restart-the-game.gif" />
+
+            <h2>Step 11: Money</h2>
+
+            <p>The player starts with $100. Each hand is played with a bet of $5. If the player loses, they lose $5. If they win, they get $5. If the player gets a blackjack, they win $7.50.</p>
+
+            <img src="step11-money.gif" />
+
+            <h2>Step 12: Add Some Color</h2>
+
+            <p>If you're reading ahead, you can start this one earlier. Regardless, add some color to make it a little easier to read.</p>
+
+            <img src="step12-add-some-color.gif" />
+        </div>
+
+    </body>
+</html>
